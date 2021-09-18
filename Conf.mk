@@ -2,42 +2,43 @@
 ######### Project infos
 #############################################################################################################
 
-PROJECT=blinky
+PROJECT := blinky
+OUTPUT_DIR := output
 
 #############################################################################################################
 ######### Architecture flags
 #############################################################################################################
 
 # Selecting Core
-CORTEX_M=7
+CORTEX_M := 7
 # Options for specific architecture. Everthing that start with -m* is a ARM specific option
-ARCH_FLAGS=-mcpu=cortex-m$(CORTEX_M) -mfloat-abi=hard -mthumb 
+ARCH_FLAGS := -mcpu=cortex-m$(CORTEX_M) -mfloat-abi=hard -mthumb
 
 #############################################################################################################
 ######### Compiler & Linker
 #############################################################################################################
 
-CC=arm-none-eabi-gcc
-CXX=arm-none-eabi-g++
-OBJCOPY=arm-none-eabi-objcopy
+CC := arm-none-eabi-gcc
+CXX := arm-none-eabi-g++
+OBJCOPY := arm-none-eabi-objcopy
 
 # Use newlib-nano. In addition to standard C library, newlib-nano also added to the toolchain package.
-USE_NANO=--specs=nano.specs
+USE_NANO := --specs=nano.specs
 
 # Use seimhosting or not
-USE_SEMIHOST=--specs=rdimon.specs
-USE_NOHOST=--specs=nosys.specs
+USE_SEMIHOST := --specs=rdimon.specs
+USE_NOHOST := --specs=nosys.specs
 
 #############################################################################################################
 ######### Linker options 
 ############################################################################################################# 
 
 # Link for code size
-GC=-Wl,--gc-sections
+GC := -Wl,--gc-sections
 # Create map file
-MAP=-Wl,-Map=$(PROJECT).map
+MAP := -Wl,-Map=$(OUTPUT_DIR)/$(PROJECT).map
 
-LFLAGS=$(USE_NOHOST) $(GC) $(MAP)
+LFLAGS := $(USE_NOHOST) $(GC) $(MAP)
 
 # -Wl Pass options to the linker. Test these options!!!!!
     # -Wl,--start-group 
@@ -50,7 +51,7 @@ LFLAGS=$(USE_NOHOST) $(GC) $(MAP)
 ######### Compiler options
 #############################################################################################################
 
-CFLAGS=$(ARCH_FLAGS) $(USE_NANO) $(DEFINES)\
+CFLAGS := $(ARCH_FLAGS) $(USE_NANO)\
     -Og\
     -flto\
     -ffunction-sections\
@@ -58,7 +59,7 @@ CFLAGS=$(ARCH_FLAGS) $(USE_NANO) $(DEFINES)\
     -Wall\
     -fno-builtin
 
-CXXFLAGS=$(CFLAGS)
+CXXFLAGS := $(CFLAGS)
 
 #CFLAGS:= 
     # -std=gnu11
