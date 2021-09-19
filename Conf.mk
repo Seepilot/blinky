@@ -106,9 +106,9 @@ DEFINES := $(addprefix -D ,$(DEFINES))
 ######### Include directories
 ###################################################################################################
 INC_DIRS := src/inc \
-	stm32h7xx_hal_driver/Inc \
-	stm32h7xx_hal_driver/Inc/Legacy \
-	cmsis_device_h7/Include \
-	CMSIS_5/CMSIS/Core/Include
+	system/stm32h7xx_hal_driver/Inc \
+	system/stm32h7xx_hal_driver/Inc/Legacy \
+	system/cmsis_device_h7/Include \
+	system/CMSIS_5/CMSIS/Core/Include
 
 INC_DIRS := $(addprefix -I ,$(INC_DIRS))
