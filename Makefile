@@ -36,8 +36,14 @@ $(OUTPUT_DIR)/$(PROJECT).elf: $(OBJS)
 clean: 
 	rm -fr $(OUTPUT_DIR)
 
-print: 
+print_objects: 
 	@echo $(OBJS)
+
+print_includes:
+	@echo $(INC_DIRS)
+
+flash: $(OUTPUT_DIR)/$(PROJECT).bin
+	st-flash --reset write $(OUTPUT_DIR)/$(PROJECT).bin 0x08000000
 
 %/.f:
 	mkdir -p $(dir $@)

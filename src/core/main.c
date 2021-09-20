@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include <stdio.h>
+#include "led.h"
 
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config(void);
@@ -48,28 +49,19 @@ int main(void)
   /* Configure the system clock to 400 MHz */
   SystemClock_Config();
 
-
-  GPIO_InitTypeDef GPIO_Init;
-  __GPIOB_CLK_ENABLE();
-  GPIO_Init.Pin = GPIO_PIN_0;
-  GPIO_Init.Pull = GPIO_NOPULL;
-  GPIO_Init.Mode  = GPIO_MODE_OUTPUT_PP;
-  GPIO_Init.Speed = GPIO_SPEED_FREQ_LOW;
-   
-  HAL_GPIO_Init(GPIOB, &GPIO_Init);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-
-  
+  led_init();
 
   /* Infinite loop */
   while (1)
   {
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-    HAL_Delay(500);
-
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-    HAL_Delay(500);
-    
+    green_led_on();
+    yellow_led_off();
+    red_led_on();
+    HAL_Delay(1000);
+    green_led_off();
+    yellow_led_on();
+    red_led_off();
+    HAL_Delay(1000);
   }
 }
 
