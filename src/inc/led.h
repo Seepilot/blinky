@@ -21,12 +21,12 @@
 #ifndef __LED_H
 #define __LED_H
 
- void led_init(void);
- void green_led_on(void);
- void green_led_off(void);
- void yellow_led_on(void);
- void yellow_led_off(void);
- void red_led_on(void);
- void red_led_off(void);
+ void LED_init(void);
+ void green_LED_on(void);
+ void green_LED_off(void);
+ void yellow_LED_on(void);
+ void yellow_LED_off(void);
+ void red_LED_on(void);
+ void red_LED_off(void);
 
  #endif /* __LED_H */
