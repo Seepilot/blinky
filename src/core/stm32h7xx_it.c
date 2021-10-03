@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    Templates/Src/stm32h7xx_it.c 
+  * @file    src/core/stm32h7xx_it.c 
   * @author  MCD Application Team
   * @brief   Main Interrupt Service Routines.
   *          This file provides template for all exceptions handler and 
