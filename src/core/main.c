@@ -21,6 +21,7 @@
 #include "main.h"
 #include <stdio.h>
 #include "led.h"
+#include "com.h"
 
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config(void);
@@ -48,19 +49,26 @@ int main(void)
 
   /* Configure the system clock to 400 MHz */
   SystemClock_Config();
-
-  led_init();
+  
+  LED_init();
+  COM_Init();
+  
+  printf("\n\n\n\n\n\n\n\n\n\n\n\nHello NUCLEO!!!!!\n");
+  printf("System Clock Frequence      = %lu Hz \n",HAL_RCC_GetSysClockFreq());
+  printf("HCLK Frequence              = %lu Hz \n",HAL_RCC_GetHCLKFreq());
+  printf("PCLK1 Frequence             = %lu Hz \n",HAL_RCC_GetPCLK1Freq());
+  printf("PCLK2 Frequence             = %lu Hz \n",HAL_RCC_GetPCLK2Freq());
 
   /* Infinite loop */
   while (1)
   {
-    green_led_on();
-    yellow_led_off();
-    red_led_on();
+    green_LED_on();
+    yellow_LED_off();
+    red_LED_on();
     HAL_Delay(1000);
-    green_led_off();
-    yellow_led_on();
-    red_led_off();
+    green_LED_off();
+    yellow_LED_on();
+    red_LED_off();
     HAL_Delay(1000);
   }
 }
