@@ -1,10 +1,8 @@
 /**
   ******************************************************************************
-  * @file    stm32h7xx_hal_conf_template.h
+  * @file    src/inc/stm32h7xx_hal_conf.h
   * @author  MCD Application Team
-  * @brief   HAL configuration template file. 
-  *          This file should be copied to the application folder and renamed
-  *          to stm32h7xx_hal_conf.h.
+  * @brief   HAL configuration file. 
   ******************************************************************************
   * @attention
   *
@@ -44,7 +42,7 @@
 //#define HAL_DAC_MODULE_ENABLED
 //#define HAL_DCMI_MODULE_ENABLED
 //#define HAL_DFSDM_MODULE_ENABLED
-//#define HAL_DMA_MODULE_ENABLED
+#define HAL_DMA_MODULE_ENABLED
 //#define HAL_DMA2D_MODULE_ENABLED
 //#define HAL_ETH_MODULE_ENABLED
 //#define HAL_EXTI_MODULE_ENABLED
@@ -85,7 +83,7 @@
 //#define HAL_SRAM_MODULE_ENABLED
 //#define HAL_SWPMI_MODULE_ENABLED
 //#define HAL_TIM_MODULE_ENABLED
-//#define HAL_UART_MODULE_ENABLED
+#define HAL_UART_MODULE_ENABLED
 //#define HAL_USART_MODULE_ENABLED
 //#define HAL_WWDG_MODULE_ENABLED
 

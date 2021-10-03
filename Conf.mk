@@ -105,6 +105,7 @@ DEFINES := $(addprefix -D ,$(DEFINES))
 ###################################################################################################
 ######### Include directories
 ###################################################################################################
+
 INC_DIRS := src/inc \
 	system/stm32h7xx_hal_driver/Inc \
 	system/stm32h7xx_hal_driver/Inc/Legacy \
@@ -112,3 +113,13 @@ INC_DIRS := src/inc \
 	system/CMSIS_5/CMSIS/Core/Include
 
 INC_DIRS := $(addprefix -I ,$(INC_DIRS))
+
+###################################################################################################
+######### Inlcude all Sourcelists.mk
+###################################################################################################
+
+SRCS :=
+-include src/com/Sourcelist.mk
+-include src/core/Sourcelist.mk
+-include src/Sourcelist.mk
+-include system/Sourcelist.mk

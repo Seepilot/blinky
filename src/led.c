@@ -28,7 +28,7 @@
   * @param  None
   * @retval None
   */
-void led_init(void)
+void LED_init(void)
 {
     GPIO_InitTypeDef GPIO_Init;
 
@@ -57,7 +57,7 @@ void led_init(void)
   * @param  None
   * @retval None
   */
-void green_led_on(void)
+void green_LED_on(void)
 {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 }
@@ -67,7 +67,7 @@ void green_led_on(void)
   * @param  None
   * @retval None
   */
-void green_led_off(void)
+void green_LED_off(void)
 {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 }
@@ -77,7 +77,7 @@ void green_led_off(void)
   * @param  None
   * @retval None
   */
-void yellow_led_on(void)
+void yellow_LED_on(void)
 {
     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_SET);
 }
@@ -87,7 +87,7 @@ void yellow_led_on(void)
   * @param  None
   * @retval None
   */
-void yellow_led_off(void)
+void yellow_LED_off(void)
 {
     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1, GPIO_PIN_RESET);
 }
@@ -97,7 +97,7 @@ void yellow_led_off(void)
   * @param  None
   * @retval None
   */
-void red_led_on(void)
+void red_LED_on(void)
 {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
 }
@@ -107,7 +107,7 @@ void red_led_on(void)
   * @param  None
   * @retval None
   */
-void red_led_off(void)
+void red_LED_off(void)
 {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
 }

@@ -1,8 +1,11 @@
 /**
   ******************************************************************************
-  * @file    src/inc/led.h
+  * @file    src/inc/com.h
   * @author  Andreas Ritter
-  * @brief   LED control of the NUCLEO-H743ZI board.
+  * @brief   This file provides the initialisation of the USART2 and retargets
+  *          the printf() function. After initialisation, it is
+  *          possible to send messages with printf() through the USB interface 
+  *          of the NUCLEO-H743ZI board to a terminal.    
   ******************************************************************************
   * @attention
   *
@@ -18,15 +21,9 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __LED_H
-#define __LED_H
+#ifndef __COM_H
+#define __COM_H
 
- void LED_init(void);
- void green_LED_on(void);
- void green_LED_off(void);
- void yellow_LED_on(void);
- void yellow_LED_off(void);
- void red_LED_on(void);
- void red_LED_off(void);
+void COM_Init(void);
 
- #endif /* __LED_H */
+ #endif /* __COM_H */

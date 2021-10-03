@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    system_stm32h7xx.c
+  * @file    src/core/system_stm32h7xx.c
   * @author  MCD Application Team
   * @brief   CMSIS Cortex-Mx Device Peripheral Access Layer System Source File.
   *
